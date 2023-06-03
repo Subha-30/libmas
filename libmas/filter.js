@@ -1,5 +1,5 @@
 const filterButtons = document.querySelectorAll("#filter-buttons button");
-const filterableCards = document.querySelectorAll("#paginated-list .item-card");
+const filterableCards = document.querySelectorAll("#paginated-list .card-block");
 // Function to filter cards based on filter buttons
 const filterCards = (e) => {
     document.querySelector("#filter-buttons .active").classList.remove("active");
