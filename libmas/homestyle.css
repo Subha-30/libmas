@@ -1,8 +1,8 @@
 :root {
-    --main-bg-color: #009d63;
-    --main-text-color: #009d63;
-    --second-text-color: #bbbec5;
-    --second-bg-color: #c1efde;
+    --main-bg-color: #00789d;
+    --main-text-color: #004f9d;
+    --second-text-color: #bbc2c5;
+    --second-bg-color: #c1cdef;
   }
   
   .primary-text {
@@ -29,10 +29,10 @@
     overflow-x: hidden;
     background-image: linear-gradient(
       to right,
-      #baf3d7,
-      #c2f5de,
-      #cbf7e4,
-      #d4f8ea,
+      #bae2f3,
+      #c2e6f5,
+      #cbf0f7,
+      #d4edf8,
       #ddfaef
     );
   }
@@ -189,4 +189,19 @@
   .pagination-number.active {
     color: #fff;
     background: #0085b6;
+  }
+
+
+
+  #filter-buttons button {
+    border-radius: 3px;
+    background: #fff;
+    border-color: transparent;
+  }
+  #filter-buttons button:hover {
+    background: #ddd;
+  }
+  #filter-buttons button.active {
+    color: #fff;
+    background: #6c757d;
   }

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="homestyle.css" />
     <title>Bootstap 5 Responsive Admin Dashboard</title>
+    <script src="filter.js" defer></script>
 </head>
 
 <body>
@@ -20,9 +21,9 @@
             <div class="list-group list-group-flush my-3">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                        class="fas fa-project-diagram me-2"></i>Books</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-project-diagram me-2"></i>Books</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="fas fa-map-marker-alt me-2"></i>Filter</a>
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
@@ -101,9 +102,20 @@
                         <p class="card-text">Welcom to bootstrap card styles</p>
                         <a href="#" class="btn btn-primary">Submit</a>
                       </div>   -->
+                      <div class="row mt-5" id="filter-buttons">
+                        <div class="col-12">
+                          <button class="btn mb-2 me-1 active" data-filter="all">Show all</button>
+                          <button class="btn mb-2 mx-1" data-filter="novel">Novels</button>
+                          <button class="btn mb-2 mx-1" data-filter="cse">CSE</button>
+                          <button class="btn mb-2 mx-1" data-filter="ece">ECE</button>
+                          <button class="btn mb-2 mx-1" data-filter="mech">Mech</button>
+                          <button class="btn mb-2 mx-1" data-filter="civil">Civil</button>
+
+                        </div>
+                        </div>
                       <div id="paginated-list" class="row">
                         <div class="col-md-3 col-sm-6 item">
-                          <div class="card item-card card-block">
+                          <div class="card item-card card-block" data-name="novel">
                         <img src="https://images-na.ssl-images-amazon.com/images/I/51awyZJCrfL.jpg" alt="Photo of sunset">
                             <h5 class="item-card-title mt-3 mb-3">Leaving Time</h5>
                             <p class="card-text">Jodi Picout</p> 
@@ -111,7 +123,7 @@
                         </div>
 
                         <div class="col-md-3 col-sm-6 item">
-                          <div class="card item-card card-block">
+                          <div class="card item-card card-block" data-name="novel">
                         <img src="https://mbassets.b-cdn.net/cdni/book-cover/1592205709_085434300.jpg?w=200&q=50" alt="Photo of sunset">
                             <h5 class="item-card-title  mt-3 mb-3">Revenge of Ghost</h5>
                             <p class="card-text">Sunil Kapadia</p> 
@@ -119,7 +131,7 @@
                         </div>
 
                        <div class="col-md-3 col-sm-6 item">
-                          <div class="card item-card card-block">
+                          <div class="card item-card card-block" data-name="novel">
                         <img src="https://bestlifeonline.com/wp-content/uploads/sites/3/2020/10/Harry-Potter-and-the-Chamber-of-Secrets-book-cover.jpg" alt="Photo of sunset">
                             <h5 class="item-card-title  mt-3 mb-3">Harry Potter</h5>
                             <p class="card-text">J.K.Rowling</p> 
@@ -127,7 +139,7 @@
                         </div>
 
                         <div class="col-md-3 col-sm-6 item">
-                          <div class="card item-card card-block">
+                          <div class="card item-card card-block" data-name="novel">
                         <img src="https://www.rd.com/wp-content/uploads/2020/01/69_The-Great-Gatsby-by-F-Scott-Fitzgerald-via-amazon.jpg?fit=700,700" alt="Photo of sunset">
                             <h5 class="item-card-title  mt-3 mb-3">The Great Gatsby</h5>
                             <p class="card-text">Scott Fitzz</p> 
@@ -135,7 +147,7 @@
                         </div>
 
                         <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="ece">
                           <img src="https://content.kopykitab.com/ebooks/2018/09/22081/content/medium/page1.png" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Design of Machine Elements</h5>
                               <p class="card-text">Vinod Patil</p> 
@@ -143,7 +155,7 @@
                           </div> 
                           
                         <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="novel">
                           <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1656013307-a1txlqssuol-1656013278.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">The Roughest Draft</h5>
                               <p class="card-text">Austin Broka</p> 
@@ -151,7 +163,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="cse">
                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEbCjWn3aEap0mENp43rd3jbT5e2TXDXklR6pH98yQSNhUIv0YS_67IsNUAjX4EiOm7i8&usqp=CAU" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Computer Networks</h5>
                               <p class="card-text">Peterson</p> 
@@ -159,7 +171,7 @@
                         </div>
 
                         <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="novel">
                           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStgzxp25V3uEb4E0Xu_Atf_xr7UUoO0zB2WA&usqp=CAU" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">The Guide</h5>
                               <p class="card-text">R.K.Narayan</p> 
@@ -167,7 +179,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="ece">
                           <img src="https://m.media-amazon.com/images/I/41vv-zAVZFS._SX378_BO1,204,203,200_.jpg" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Microcontrollers</h5>
                               <p class="card-text">Suresh Babu</p> 
@@ -175,7 +187,7 @@
                           </div>  
 
                         <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="novel">
                           <img src="https://img.etimg.com/photo/msid-98117645,imgsize-73706/TheAlchemistbyPauloCoelho.jpg" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">The Alchemist</h5>
                               <p class="card-text">Panlo Coelho</p> 
@@ -183,7 +195,7 @@
                           </div>
                         
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="cse">
                           <img src="https://m.media-amazon.com/images/I/51HuneNIllL._SX354_BO1,204,203,200_.jpg" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Operating Systems</h5>
                               <p class="card-text">Rajiv chopra</p> 
@@ -192,7 +204,7 @@
                           
                         
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="novel">
                           <img src="https://www.kayazar.com/images/product_gallery/1630846850_Black_Beauty.webp" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Black Beauty</h5>
                               <p class="card-text">Anna Swell</p> 
@@ -200,7 +212,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="cse">
                           <img src="https://media.springernature.com/full/springer-static/cover-hires/book/978-3-030-72357-6" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Artificial Intelligence</h5>
                               <p class="card-text">Charu Aggarwal</p> 
@@ -208,7 +220,7 @@
                           </div> 
                          
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="novel">
                           <img src="https://www.kayazar.com/images/product_gallery/1630846850_Black_Beauty.webp" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Black Beauty</h5>
                               <p class="card-text">Anna Swell</p> 
@@ -216,7 +228,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="mech">
                           <img src="https://www.falconpublishers.com/wp-content/uploads/2021/06/P-AP-ECE-3YR-5SEM-IE2F.jpg" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Industrial Technologies</h5>
                               <p class="card-text">Obulesu</p> 
@@ -224,7 +236,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="civil">
                           <img src="https://doris.sagepub.in/funlearn/showProfileImage?id=40557&fileName=N6584.jpg&type=books&imgType=webp" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Concrete Technology</h5>
                               <p class="card-text">Minde</p> 
@@ -232,7 +244,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="mech">
                           <img src="https://m.media-amazon.com/images/I/81GXIQPqgAL._AC_UF1000,1000_QL80_.jpg" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Mechanical Design</h5>
                               <p class="card-text">Ugural</p> 
@@ -240,7 +252,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="cse">
                           <img src="https://m.media-amazon.com/images/I/51a0slNQpoL.jpg" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Data Structures</h5>
                               <p class="card-text">Rudolph Russel</p> 
@@ -248,7 +260,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="civil">
                           <img src="data:image/jpeg;base64,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" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Steel Structures</h5>
                               <p class="card-text">Atul</p> 
@@ -257,7 +269,7 @@
 
                          
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="mech">
                           <img src="https://www.standardsmedia.com/book_images/1268_9780831131357.jpg" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Mechanical Technology</h5>
                               <p class="card-text">Stephen</p> 
@@ -265,7 +277,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="cse">
                           <img src="https://learning.oreilly.com/library/cover/9781439856420/250w/" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Cloud Computing</h5>
                               <p class="card-text">Ranjan</p> 
@@ -273,7 +285,7 @@
                           </div> 
 
                           <div class="col-md-3 col-sm-6 item">
-                            <div class="card item-card card-block">
+                            <div class="card item-card card-block" data-name="cse">
                           <img src="https://m.media-amazon.com/images/I/51xO+31UxeL._SY498_BO1,204,203,200_.jpg" alt="Photo of sunset">
                               <h5 class="item-card-title  mt-3 mb-3">Web Technology</h5>
                               <p class="card-text">Roy</p> 
@@ -291,7 +303,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        var el = document.getElementById("wrapper");
+    var el = document.getElementById("wrapper");
         var toggleButton = document.getElementById("menu-toggle");
 
         toggleButton.onclick = function () {
