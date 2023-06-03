@@ -12,7 +12,7 @@ const filterCards = (e) => {
             card.classList.replace("hide", "show");
         }
         else{
-        card.classList.replace("show","hide");}
+        card.classList.add("hide");}
     });
 }
 filterButtons.forEach(button => button.addEventListener("click", filterCards));
