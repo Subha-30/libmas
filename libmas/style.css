@@ -11,11 +11,11 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #5372F0;
+  background: #5077c5;
 }
 ::selection{
   color: #fff;
-  background: #5372F0;
+  background: #596bb2;
 }
 .wrapper{
   width: 380px;
